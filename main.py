@@ -3,19 +3,27 @@ import bank
 from account import Account
 
 #bank
-bank_acct = bank.Account('lukelu','0021179-0664447',67619.00)
-
+luyaochi_bank = bank.Account()
+luyaochi_bank.set('lukelu','0021179-0664447',67619.00,'')
 #cash
-cash_acct = Account(1061)
-cash_acct.add_item(item='drink-tea',value=25, type1='cost', date='2014/11/04')
-cash_acct.add_item(item='drink-water',value=25, type1='cost', date='2014/11/04')
-cash_acct.add_item(item='dinner',value=200, type1='cost', date='2014/11/04')
-cash_acct.add_item(item='a',value=6000, type1='income', date='2014/11/04')
-cash_acct.add_item(item='drink',value=23, type1='cost', date='2014/11/05')
+luyaochi = Account(1061)
 
-cash_acct.add_item(item='breakfist',value=50, type1='cost', date='2014/11/05')
-cash_acct.add_item(item='drink',value=23, type1='cost', date='2014/11/05')
-cash_acct.add_item(item='dinner',value=100, type1='cost', date='2014/11/05')
+luyaochi.add_expense(item='drink-tea',value=25, date='2014/11/04')
+luyaochi.add_expense(item='drink-water',value=25, date='2014/11/04')
+luyaochi.add_expense(item='dinner',value=200, date='2014/11/04')
+luyaochi.add_income(item='a',value=6000, date='2014/11/04')
+luyaochi.add_expense(item='drink',value=23, date='2014/11/05')
+
+luyaochi.add_expense(item='breakfist',value=50, date='2014/11/05')
+luyaochi.add_expense(item='drink',value=23, date='2014/11/05')
+luyaochi.add_expense(item='dinner',value=100, date='2014/11/05')
+
+luyaochi.add_expense(item='breakfist',value=50, date='2014/11/06')
+luyaochi.add_expense(item='drink',value=45, date='2014/11/06')
+luyaochi.add_expense(item='dinner',value=70, date='2014/11/06')
+
+luyaochi.add_expense(item='breakfist',value=50, date='2014/11/07')
+luyaochi.add_expense(item='dinner',value=89, date='2014/11/07')
 
 #budget
 from budget import Pre_expenditure
@@ -50,11 +58,12 @@ for item in pre_expediture_list.pre_expenditure_list:
 
 		
 
-print('month:' + str(day_budget_total))
-print('season:' + str(month_budget_total))
+print('day:' + str(day_budget_total))
+print('month:' + str(month_budget_total))
+print('season:' + str(4*month_budget_total))
 print('year:' + str(year_budget_total))
-
 print('------------------------------------')
-print('cash:' + str(cash_acct.acct['cash']))
-print('bank:' + bank_acct.__str__())
-print('total:' + str(cash_acct.acct['cash'] + bank_acct.balance))
+print('cash:' + str(luyaochi.overcash))
+print('bank:' + luyaochi_bank.__str__())
+print('total:' + str(luyaochi.overcash + luyaochi_bank.balance))
+

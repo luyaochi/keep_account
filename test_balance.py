@@ -1,24 +1,8 @@
-from account import Account
+from balance import Balance
 
-#old
-myaccount = Account(1000)
 
-#new update
-#rename and rewrite method
 
-#expense
-myaccount.add_expense(item='food',value=100, date='2014/02/26')
-myaccount.add_expense(item='letto',value=100, date='2014/02/26')
-myaccount.del_expense(item='letto', value=100)
-myaccount.show_expenses()
-#income
-myaccount.add_income(item='food',value=100, date='2014/02/26')
-myaccount.add_income(item='letto',value=100, date='2014/02/26')
-myaccount.del_income(item='letto', value=100)
-myaccount.show_incomes()
-
-myaccount.show_cashflow()
-
+myaccount = Balance()
 #asset
 myaccount.add_asset(type1='bank',name='lukelu',number='0021179-0664447',balance=67619.00)
 myaccount.add_asset(type1='bank',name='lukelu',number='0021179-0664448',balance=67619.00)

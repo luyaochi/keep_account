@@ -1,8 +1,15 @@
 class Account:
-	def __init__(self, name, number, balance):
+	def __init__(self):
+		self.name = ''
+		self.number = ''
+		self.balance = 0
+		self.category = ''
+
+	def set(self, name, number, balance, category):
 		self.name = name
 		self.number = number
 		self.balance = balance
+		self.category = category
 
 	def deposit(self, amount):
 		if amount <= 0:
